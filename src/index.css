@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@theme {
+  --color-primary: hsl(252, 88%, 62%);       /* Electric Violet (logo curve) */
+  --color-secondary: hsl(258, 60%, 48%);     /* Deep Purple */
+  --color-accent: hsl(255, 95%, 70%);        /* Light Neon Purple */
+  --color-background: hsl(240, 7%, 6%);      /* Soft Black (#0e0e11 style) */
+  --color-surface: hsl(240, 8%, 12%);        /* Charcoal card background */
+  --color-text: hsl(0, 0%, 98%);             /* Almost white */
+  --color-text-muted: hsl(240, 5%, 65%);     /* Soft gray */
+  --color-border: hsl(240, 6%, 20%);         /* Dark gray border */
+  --color-hover: hsl(252, 95%, 70%);         /* Brighter neon hover effect */
+}
+@layer utilities {
+  .bg-app-gradient {
+    @apply bg-gradient-to-br from-background via-surface to-black;
+  }
+}

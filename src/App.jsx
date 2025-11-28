@@ -38,7 +38,7 @@ function App() {
       <Sidebar activeSection={activeSection} setActiveSection={setActiveSection} />
       <div className="flex-1 flex flex-col overflow-hidden">
         <Header />
-        <main className="flex-1 overflow-y-auto">
+        <main className="flex-1 overflow-y-auto bg-surface">
           {renderContent()}
         </main>
       </div>

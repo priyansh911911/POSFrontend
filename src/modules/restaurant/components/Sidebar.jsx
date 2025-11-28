@@ -1,6 +1,20 @@
 import React from 'react';
 
-const Sidebar = ({ menuItems }) => {
+const Sidebar = () => {
+  const menuItems = [
+    { icon: '📊', label: 'Dashboard', active: true },
+    { icon: '📋', label: 'Live Orders' },
+    { icon: '💳', label: 'Billing' },
+    { icon: '🎫', label: 'Coupons' },
+    { icon: '📄', label: 'GST Reports' },
+    { icon: '👥', label: 'Staff' },
+    { icon: '📦', label: 'Inventory' },
+    { icon: '🎯', label: 'Leads' },
+    { icon: '📱', label: 'Digital Menu' },
+    { icon: '🔗', label: 'Integrations' },
+    { icon: '🎁', label: 'Referrals' }
+  ];
+
   return (
     <div className="sidebar">
       <div className="logo">

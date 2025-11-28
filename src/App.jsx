@@ -15,6 +15,7 @@ import Referrals from './components/referrals/Referrals';
 
 function App() {
   const [activeSection, setActiveSection] = useState('dashboard');
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   const renderContent = () => {
     switch (activeSection) {
@@ -34,11 +35,22 @@ function App() {
   };
 
   return (
-    <div className="flex h-screen bg-background">
-      <Sidebar activeSection={activeSection} setActiveSection={setActiveSection} />
-      <div className="flex-1 flex flex-col overflow-hidden">
-        <Header />
-        <main className="flex-1 overflow-y-auto bg-surface">
+    <div className="min-h-screen bg-background flex">
+      {/* Sidebar */}
+      <Sidebar 
+        activeSection={activeSection} 
+        setActiveSection={setActiveSection}
+        isOpen={sidebarOpen}
+        onClose={() => setSidebarOpen(false)}
+      />
+      
+      {/* Main Content */}
+      <div className={`flex-1 transition-all duration-300 ${sidebarOpen ? 'ml-0' : 'ml-0'}`}>
+        <Header 
+          onMenuToggle={() => setSidebarOpen(!sidebarOpen)} 
+          sidebarOpen={sidebarOpen}
+        />
+        <main className="bg-surface min-h-screen">
           {renderContent()}
         </main>
       </div>
